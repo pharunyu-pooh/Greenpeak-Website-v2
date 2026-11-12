@@ -27,7 +27,7 @@ jobs:
       - run: npm test
       - run: npx vite build --config vite.config.pages.ts
         env:
-          PAGES_BASE: /${{ github.event.repository.name }}/
+          PAGES_BASE: /
       - name: Fail if any Lovable-hosted asset URL is left in the build
         run: |
           if grep -rIl "__l5e" dist/client; then
